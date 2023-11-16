@@ -11,7 +11,7 @@ Task Management System with Authentication
 
 ## About TaskManager
 
-Create Task and Subtask with TaskManager with following functions
+Create Task and Subtask with TaskManager with following functions using Laravel and Materialize Css
 
 - Authentication.
 - Create and Edit Task and Sub Task.
@@ -20,3 +20,12 @@ Create Task and Subtask with TaskManager with following functions
 - Upload Attachments Image or Document in Task and Sub-Task.
 - Download attachments.
 - Delete Attachments Permanently.
+
+How to Setup?
+
+- Clone or Download this Repository to your respective server or local server
+- Create your database schema
+- modify the .env file the database credentials to connect to database
+- execute to the terminal (php artisan migrate) or simply run your browser (http://yourdomain/migrate)
+- execute to the terminal (php artisan storage:link) or simply run your browser (http://yourdomain/link)
+- to create temporary server in your local workstation run command (php artisan serve) then browse to (http://localhost:8000)
