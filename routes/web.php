@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facades\Artisan;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,14 +15,24 @@ use Illuminate\Support\Facades\Storage;
 |
 */
 
+Route::get('/link', function () {
+    Artisan::call('storage:link');
+    return "Link";
+});
+Route::get('/migrate', function () {
+    Artisan::call('migrate');
+    return "Migrate";
+});
 
 Auth::routes();
 Route::group(['middleware' => ['web']], function () {
     Route::get('storage/{filename}', function ($filename) {
-        $userid = session()->get('user')->id;
-        return Storage::get($userid . '/' . $filename);
+        //$userid = session()->get('user')->id;
+        return Storage::get($filename);
     });
 });
+
+
 Route::any('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::any('/bin', [App\Http\Controllers\HomeController::class, 'bintodo'])->name('bintodo');
 Route::any('/account', [App\Http\Controllers\HomeController::class, 'accounts'])->name('account');
