@@ -26,8 +26,8 @@ How to Setup?
 - Clone or Download this Repository to your respective server or local server
 - Create your database schema
 - modify the .env file the database credentials to connect to database
-- execute to the terminal (php artisan migrate) or simply run your browser (http://yourdomain/migrate) only run once
-- execute to the terminal (php artisan storage:link) or simply run your browser (http://yourdomain/link)
-- to create temporary server in your local workstation run command (php artisan serve) then browse to (http://localhost:8000)
+- execute to the terminal <code>php artisan migrate</code> or simply run your browser (http://yourdomain/migrate) only run once
+- execute to the terminal <code>php artisan storage:link</code> or simply run your browser (http://yourdomain/link)
+- to create temporary server in your local workstation run command <code>php artisan serve</code> then browse to (http://localhost:8000)
 
 For Demo Go to [https://cbtms1210.x10.bz] 
