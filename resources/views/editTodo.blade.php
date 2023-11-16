@@ -100,7 +100,7 @@
                         <div class="col s6 m4 l2 center-align">
                             @if(in_array(explode('.',$attachment->name)[1],array('png','jpg','jpeg')))
                             <a class="dropdown-trigger" data-target='dropdown_{{$attachment->id}}'>
-                                <img class="responsive-img materialboxed" src="{{asset('storage/'.$attachment->name);}}" alt="{{asset('storage/'.$attachment->original_name);}}" srcset="">
+                                <img class="responsive-img materialboxed" src="{{public_path('storage/'.$attachment->name)}}" alt="{{asset('storage/'.$attachment->original_name);}}" srcset="">
                                 <p>{{$attachment->original_name}}</p>
                             </a>
                             <ul id='dropdown_{{$attachment->id}}' class='dropdown-content' style="width:fit-content !important">

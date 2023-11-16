@@ -64,7 +64,7 @@
                         </div>
                     </div>
                     <div class="fixed-action-btn ">
-                        <button type="submit" class="btn-floating btn-large red ">
+                        <button type="submit" class="btn-floating btn-large blue-grey lighten-1 ">
                             <i class="large material-icons">save</i>
                         </button>
                     </div>

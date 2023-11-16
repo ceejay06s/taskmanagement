@@ -9,7 +9,7 @@
 
                 <div class="card-panel center-align">
                     <div class="center-align">
-                        <img src="{{asset('storage/logo.png')}}" alt="logo" style="width:8rem;">
+                        <img src="/logo.png" alt="logo" style="width:8rem;">
                     </div>
 
                     <h4 class="center-align">{{ __('Login') }}</h4>

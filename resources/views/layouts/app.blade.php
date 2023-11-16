@@ -35,7 +35,7 @@
             <nav>
                 <div class="nav-wrapper blue-grey lighten-1">
                     <a href="{{ url('/') }}" class="brand-logo">
-                        <img src="{{asset('storage/logo.png')}}" style="width:4rem;" class="left hide-on-small-only responsive-img">
+                        <img src="/logo.png" style="width:4rem;" class="left hide-on-small-only responsive-img">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -117,7 +117,7 @@
                     <form action="/" method="Post">
                         @csrf
                         <div class="input-field">
-                            <input name='search' id="search" type="search" required>
+                            <input name='search' id="search" type="search" required placeholder="Search for Task">
                             <label class="label-icon left" for="search">
                                 <i class="material-icons">search</i>
                             </label>
