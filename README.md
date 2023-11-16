@@ -9,9 +9,9 @@ Task Management System with Authentication
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>-->
 
-## About TaskManager
+## About Task Manager
 
-Create Task and Subtask with TaskManager with following functions using Laravel and Materialize Css
+Create a Task or a Sub-Task with Task Manager with following functions using Laravel and Materialize Css
 
 - Authentication.
 - Send Email to Verify new registration
@@ -23,7 +23,7 @@ Create Task and Subtask with TaskManager with following functions using Laravel 
 - Download attachments.
 - Delete Attachments Permanently.
 
-How to Setup?
+<h1>How to Setup?</h1>
 
 - Clone or Download this Repository to your respective server or local server
 - Create your Database Schema
