@@ -19,7 +19,7 @@
 
                     </div>
                     <div class="row">
-                        <div class="input-field col s12">
+                        <div class="input-field col m12">
                             <input value="{{ Auth::user()->name }}" name="name" id="title" type="text" class="validate">
                             <label for="title">Name</label>
                         </div>

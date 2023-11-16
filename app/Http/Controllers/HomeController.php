@@ -195,8 +195,6 @@ class HomeController extends Controller
             $Todo->save();
             return redirect()->route('home')->with('status', 'Task moved to bin!');
         } else if ($type == 6) {
-            $Todo = Todo::find($task);
-            $Todo->delete();
             $Todo = Todo::where('parent_id', $task)->delete();
             $TodoAttachment = TodoAttachment::where('todo_id', $task)->get()->each(
                 function ($attachment) {
@@ -207,6 +205,8 @@ class HomeController extends Controller
 
             );
             TodoAttachment::where('todo_id', $task)->delete();
+            $Todo = Todo::find($task);
+            $Todo->delete();
             return redirect()->route('home')->with('status', 'Task permanently deleted!');
 
 
@@ -279,7 +279,7 @@ class HomeController extends Controller
                     $request->user()->id,
                     'local'
                 );
-                $user->image = $attachmentname;
+                //$user->image = $attachmentname;
                 Storage::setVisibility($attachmentpath, 'public');
             }
 

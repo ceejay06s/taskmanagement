@@ -23,13 +23,13 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <input value="{{$Todo->id}}" name="todo.id" id="id" type="hidden" class="validate">
-                            <input value="{{$Todo->title}}" name="todo.title" id="title" type="text" class="validate">
+                            <input value="{{$Todo->title}}" name="todo.title" required id="title" type="text" class="validate">
                             <label for="title">Title</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12 ">
-                            <textarea name="todo.description" id="description" class="materialize-textarea">{{$Todo->description}}</textarea>
+                            <textarea name="todo.description" id="description" required class="materialize-textarea">{{$Todo->description}}</textarea>
                             <label for="description">Description</label>
                         </div>
                     </div>
@@ -37,15 +37,15 @@
                     <div class="row">
 
                         <div class="input-field col s6 ">
-                            <input value="{{date('M d,Y',strtotime($Todo->deadline_datetime))}}" name="todo.deadline.date" type="text" class="datepicker" placeholder="Deadline Date">
+                            <input required value="{{date('M d,Y',strtotime($Todo->deadline_datetime))}}" name="todo.deadline.date" type="text" class="datepicker" placeholder="Deadline Date">
                         </div>
                         <div class="input-field col s6 ">
-                            <input value="{{date('H:i A',strtotime($Todo->deadline_datetime))}}" name="todo.deadline.time" type="text" class="timepicker" placeholder="Deadline Time">
+                            <input required value="{{date('H:i A',strtotime($Todo->deadline_datetime))}}" name="todo.deadline.time" type="text" class="timepicker" placeholder="Deadline Time">
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <select name="todo.status">
+                            <select name="todo.status" required>
                                 <option <?= ($Todo->status == 1 ? 'selected' : '') ?> value="1">To Do</option>
                                 <option <?= ($Todo->status == 2 ? 'selected' : '') ?> value="2">In Progress</option>
                                 <option <?= ($Todo->status == 3 ? 'selected' : '') ?> value="3">Completed</option>
@@ -70,7 +70,8 @@
                             @if($Task_Item->attachment)
                             <div class="chip tooltipped" data-position="bottom" data-tooltip="Attachments">{{$Task_Item->attachment}} Attachment/s</div>
                             @endif
-                            <div class="chip  red-text tooltipped" data-position="bottom" data-tooltip="Deadline">{{$Task_Item->deadline_datetime}}</div>
+                            <div class="chip tooltipped" data-position="bottom" data-tooltip="Date-Time Created">{{date('M d, Y H:i A',strtotime($Task_Item->created_at))}}</div>
+                            <div class="chip  red-text tooltipped" data-position="bottom" data-tooltip="Deadline">{{date('M d, Y H:i A',strtotime($Task_Item->deadline_datetime))}}</div>
                             @if($Task_Item->status ==1)
                             <div class="chip tooltipped" data-position="bottom" data-tooltip="Status">To Do</div>
                             @elseif($Task_Item->status ==2)
@@ -100,7 +101,7 @@
                         <div class="col s6 m4 l2 center-align">
                             @if(in_array(explode('.',$attachment->name)[1],array('png','jpg','jpeg')))
                             <a class="dropdown-trigger" data-target='dropdown_{{$attachment->id}}'>
-                                <img class="responsive-img materialboxed" src="{{public_path('storage/'.$attachment->name)}}" alt="{{asset('storage/'.$attachment->original_name);}}" srcset="">
+                                <img class="responsive-img materialboxed" src="{{asset('storage/'.$attachment->name);}}" alt="{{asset('storage/'.$attachment->original_name);}}" srcset="">
                                 <p>{{$attachment->original_name}}</p>
                             </a>
                             <ul id='dropdown_{{$attachment->id}}' class='dropdown-content' style="width:fit-content !important">

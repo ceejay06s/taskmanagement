@@ -14,6 +14,8 @@ Task Management System with Authentication
 Create Task and Subtask with TaskManager with following functions using Laravel and Materialize Css
 
 - Authentication.
+- Send Email to Verify new registration
+- Reset Password
 - Create and Edit Task and Sub Task.
 - Remove Task (will be move to bin for manually deletion).
 - Permanently Delete Task.
@@ -24,10 +26,13 @@ Create Task and Subtask with TaskManager with following functions using Laravel 
 How to Setup?
 
 - Clone or Download this Repository to your respective server or local server
-- Create your database schema
+- Create your Database Schema
 - modify the .env file the database credentials to connect to database
-- execute to the terminal <code>php artisan migrate</code> or simply run your browser (http://yourdomain/migrate) only run once
+- (Option 1) execute to the terminal <code>php artisan migrate</code> or simply run your browser (http://yourdomain/migrate) only run once
+- (option 2) import the taskmanagementsytem.sql to your created Database Schema
 - execute to the terminal <code>php artisan storage:link</code> or simply run your browser (http://yourdomain/link)
 - to create temporary server in your local workstation run command <code>php artisan serve</code> then browse to (http://localhost:8000)
 
 For Demo Go to [https://cbtms1210.x10.bz] 
+
+Works with Mobile and Desktop Browsers

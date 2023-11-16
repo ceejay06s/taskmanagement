@@ -22,13 +22,13 @@
                     <div class="card-title">{{ __('add Todo') }}</div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input name="todo.title" id="title" type="text" class="validate">
+                            <input name="todo.title" required id="title" type="text" class="validate">
                             <label for="title">Title</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12 ">
-                            <textarea name="todo.description" id="description" class="materialize-textarea"></textarea>
+                            <textarea name="todo.description" required id="description" class="materialize-textarea"></textarea>
                             <label for="description">Description</label>
                         </div>
                     </div>
@@ -36,15 +36,15 @@
                     <div class="row">
 
                         <div class="input-field col s6 ">
-                            <input name="todo.deadline.date" type="text" class="datepicker" placeholder="Deadline Date">
+                            <input name="todo.deadline.date" required type="text" class="datepicker" placeholder="Deadline Date">
                         </div>
                         <div class="input-field col s6 ">
-                            <input name="todo.deadline.time" type="text" class="timepicker" placeholder="Deadline Time">
+                            <input name="todo.deadline.time" required type="text" class="timepicker" placeholder="Deadline Time">
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <select name="todo.status">
+                            <select name="todo.status" required>
                                 <option selected value="1">To Do</option>
                                 <option value="2">In Progress</option>
                                 <option value="3">Completed</option>

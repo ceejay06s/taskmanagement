@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Artisan;
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,22 @@ use Illuminate\Support\Facades\Artisan;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/email/verify', function () {
+    return view('auth.verify');
+})->middleware('auth')->name('verification.notice');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+ 
+    return redirect('/');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+ 
+    return back()->with('message', 'Verification link sent!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.resend');
+
 
 Route::get('/link', function () {
     Artisan::call('storage:link');
@@ -34,6 +52,7 @@ Route::group(['middleware' => ['web']], function () {
 
 
 Route::any('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::any('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::any('/bin', [App\Http\Controllers\HomeController::class, 'bintodo'])->name('bintodo');
 Route::any('/account', [App\Http\Controllers\HomeController::class, 'accounts'])->name('account');
 //Route::get('/search/{sort}/{search}', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
