@@ -40,7 +40,7 @@
                             <input required value="{{date('M d,Y',strtotime($Todo->deadline_datetime))}}" name="todo.deadline.date" type="text" class="datepicker" placeholder="Deadline Date">
                         </div>
                         <div class="input-field col s6 ">
-                            <input required value="{{date('H:i A',strtotime($Todo->deadline_datetime))}}" name="todo.deadline.time" type="text" class="timepicker" placeholder="Deadline Time">
+                            <input required value="{{date('h:i A',strtotime($Todo->deadline_datetime))}}" name="todo.deadline.time" type="text" class="timepicker" placeholder="Deadline Time">
                         </div>
                     </div>
                     <div class="row">
@@ -70,8 +70,8 @@
                             @if($Task_Item->attachment)
                             <div class="chip tooltipped" data-position="bottom" data-tooltip="Attachments">{{$Task_Item->attachment}} Attachment/s</div>
                             @endif
-                            <div class="chip tooltipped" data-position="bottom" data-tooltip="Date-Time Created">{{date('M d, Y H:i A',strtotime($Task_Item->created_at))}}</div>
-                            <div class="chip  red-text tooltipped" data-position="bottom" data-tooltip="Deadline">{{date('M d, Y H:i A',strtotime($Task_Item->deadline_datetime))}}</div>
+                            <div class="chip tooltipped" data-position="bottom" data-tooltip="Date-Time Created">{{date('M d, Y h:i A',strtotime($Task_Item->created_at))}}</div>
+                            <div class="chip  red-text tooltipped" data-position="bottom" data-tooltip="Deadline">{{date('M d, Y h:i A',strtotime($Task_Item->deadline_datetime))}}</div>
                             @if($Task_Item->status ==1)
                             <div class="chip tooltipped" data-position="bottom" data-tooltip="Status">To Do</div>
                             @elseif($Task_Item->status ==2)
@@ -124,11 +124,6 @@
                         @endforeach
                     </div>
                     @endif
-                    <!-- @if($Todo->type == 1)
-                    <a href="/addtodo/{{$Todo->id}}" class="btn wave-effect">Add Item</a>
-                    @else
-                    <a href="/edittodo/{{$Todo->parent_id}}" class="btn wave-effect">Back</a>
-                    @endif -->
                     <div class="fixed-action-btn ">
                         <a class="btn-floating btn-large blue-grey lighten-1">
                             <i class="large material-icons">menu</i>

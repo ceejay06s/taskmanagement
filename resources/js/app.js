@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var datepicker = document.querySelectorAll('.datepicker');
     var instances = M.Datepicker.init(datepicker, { yearRange: 50, showClearBtn: true });
+
+    var timepicker = document.querySelectorAll('.timepicker');
+    var instances = M.Timepicker.init(timepicker, {
+        showClearBtn: false, defaultTime: 'now'
+    });
+
     var fixed_action_btn = document.querySelectorAll('.fixed-action-btn');
     var instances = M.FloatingActionButton.init(fixed_action_btn, {
         //direction: 'left',

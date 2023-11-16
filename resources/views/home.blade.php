@@ -67,9 +67,9 @@ foreach ($Todo as $taskitems) {
                             @if($Task_Item->attachment)
                             <div class="chip tooltipped" data-position="bottom" data-tooltip="Attachments">{{$Task_Item->attachment}} Attachment/s</div>
                             @endif
-                            <div class="chip tooltipped" data-position="bottom" data-tooltip="Date-Time Created">{{date('M d, Y H:i A',strtotime($Task_Item->created_at))}}</div>
-                            <div class="chip  red-text tooltipped" data-position="bottom" data-tooltip="Deadline">{{date('M d, Y H:i A',strtotime($Task_Item->deadline_datetime))}}</div>
-                            
+                            <div class="chip tooltipped" data-position="bottom" data-tooltip="Date-Time Created">{{date('M d, Y h:i A',strtotime($Task_Item->created_at))}}</div>
+                            <div class="chip  red-text tooltipped" data-position="bottom" data-tooltip="Deadline">{{date('M d, Y h:i A',strtotime($Task_Item->deadline_datetime))}}</div>
+
                             @if($Task_Item->status ==1)
                             <div class="chip tooltipped" data-position="bottom" data-tooltip="Status">To Do</div>
                             @elseif($Task_Item->status ==2)
@@ -108,8 +108,8 @@ foreach ($Todo as $taskitems) {
                             @if($Task_Item->attachment)
                             <div class="chip tooltipped" data-position="bottom" data-tooltip="Attachments">{{$Task_Item->attachment}} Attachment/s</div>
                             @endif
-                           <div class="chip tooltipped" data-position="bottom" data-tooltip="Date-Time Created">{{date('M d, Y H:i A',strtotime($Task_Item->created_at))}}</div>
-                            <div class="chip  red-text tooltipped" data-position="bottom" data-tooltip="Deadline">{{date('M d, Y H:i A',strtotime($Task_Item->deadline_datetime))}}</div>
+                            <div class="chip tooltipped" data-position="bottom" data-tooltip="Date-Time Created">{{date('M d, Y h:i A',strtotime($Task_Item->created_at))}}</div>
+                            <div class="chip  red-text tooltipped" data-position="bottom" data-tooltip="Deadline">{{date('M d, Y h:i A',strtotime($Task_Item->deadline_datetime))}}</div>
                             @if($Task_Item->status ==1)
                             <div class="chip tooltipped" data-position="bottom" data-tooltip="Status">To Do</div>
                             @elseif($Task_Item->status ==2)
@@ -146,8 +146,8 @@ foreach ($Todo as $taskitems) {
                             @if($Task_Item->attachment)
                             <div class="chip tooltipped" data-position="bottom" data-tooltip="Attachments">{{$Task_Item->attachment}} Attachment/s</div>
                             @endif
-                            <div class="chip tooltipped" data-position="bottom" data-tooltip="Date-Time Created">{{date('M d, Y H:i A',strtotime($Task_Item->created_at))}}</div>
-                            <div class="chip  red-text tooltipped" data-position="bottom" data-tooltip="Deadline">{{date('M d, Y H:i A',strtotime($Task_Item->deadline_datetime))}}</div>
+                            <div class="chip tooltipped" data-position="bottom" data-tooltip="Date-Time Created">{{date('M d, Y h:i A',strtotime($Task_Item->created_at))}}</div>
+                            <div class="chip  red-text tooltipped" data-position="bottom" data-tooltip="Deadline">{{date('M d, Y h:i A',strtotime($Task_Item->deadline_datetime))}}</div>
                             @if($Task_Item->status ==1)
                             <div class="chip tooltipped" data-position="bottom" data-tooltip="Status">To Do</div>
                             @elseif($Task_Item->status ==2)

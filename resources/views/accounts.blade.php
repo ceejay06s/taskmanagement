@@ -14,7 +14,23 @@
                 <div class="card-content">
                     <div class="row">
                         <div class="input-field col s12 center-align">
+                            @if(file_exists(public_path('storage/'.Auth::user()->id)))
                             <img class="circle" src="{{asset('storage/'.Auth::user()->id)}}" style="width: 10rem; border:1px solid black;" alt="" srcset="">
+                            @else
+                            <i class="material-icons large">account_circle</i>
+                            @endif
+                            @if(Auth::user()->email_verified_at)
+                            <div class="center-align green-text">
+                                <i class="material-icons" style="vertical-align: bottom;">verified_user</i> Verified
+                            </div>
+                            @else
+                            <div class="center-align">
+                                <a class="blue-grey-text lighten-1" href="/email/verify">
+                                    <i class="material-icons" style="vertical-align: bottom;">offline_pin</i> Verify this Account
+                                </a>
+
+                            </div>
+                            @endif
                         </div>
 
                     </div>
