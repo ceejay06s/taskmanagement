@@ -117,7 +117,7 @@
                     <form action="/" method="Post">
                         @csrf
                         <div class="input-field">
-                            <input name='search' id="search" type="search" required>
+                            <input name='search' id="search" type="search" required placeholder="Search for Task">
                             <label class="label-icon left" for="search">
                                 <i class="material-icons">search</i>
                             </label>
