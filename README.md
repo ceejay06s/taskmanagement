@@ -1,6 +1,6 @@
 # taskmanagement
 Task Management System with Authentication
-<p align="center"><a href="https://cbtms1210.x10.bz" target="_blank"><img src="https://cbtms1210.x10.bz/storage/logo.png" width="400"></a></p>
+<p align="center"><a href="https://cbtms1210.x10.bz" target="_blank"><img src="https://github.com/ceejay06s/taskmanagement/blob/main/public%2Flogo.png" width="400"></a></p>
 
 <!--<p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status">1.0.2</a>
